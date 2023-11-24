@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Celebrety Life News Public - Quiz</title>
+        <link rel="icon" href="c:\Users\ws\Desktop\final web\favicon.ico" type="image/x-icon">
+
+         
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/stylemain.css" rel="stylesheet">
+
+        <link href="css/quiz.css" rel="stylesheet">
+
+    </head>
+
+    <div id="preloader">
+        <div class="spinner"></div>
+        <script src="js/preloader.js"></script>
+      </div>
+    
+    <body>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-8 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-geo-alt me-2"></i>
+                           Astana IT University, Astana, Kazakhstan
+                        </p>
+
+                        <p class="d-flex mb-0">
+                            <i class="bi-envelope me-2"></i>
+
+                            <a href="mailto: mindsson@bk.ru">
+                                mindsson@bk.ru
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-twitter"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-facebook"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="https://www.instagram.com/gotthllove/" class="social-icon-link bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-youtube"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link bi-whatsapp"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://pngimg.com/d/red_star_PNG48.png" class="logo img-fluid" alt="Celebrety Life">
+                    <span>
+                        Celebrety life
+                        <small>News Public</small>
+                    </span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                         
+                            <a class="nav-link smoothscroll" href="news-detail.html">News</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Others</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li> <a class="nav-link smoothscroll" href="donate.html">Donate</a></li>
+
+                                <li><a class="dropdown-item" href="index.html#section_4">Partnering</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link smoothscroll" href="contact.html">Contact</a>
+                        </li>
+
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn btn" href="#">Quiz</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    <body onload="NextQuestion(0)">
+        <main>
+            
+            <div class="modal-container" id="score-modal">
+    
+                <div class="modal-content-container">
+    
+                    <h1>Congratulations, Quiz Completed.</h1>
+    
+                    <div class="grade-details">
+                        <p>Attempts : 10</p>
+                        <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                        <p>Right Answers : <span id="right-answers"></span></p>
+                        <p>Grade : <span id="grade-percentage"></span>%</p>
+                        <p ><span id="remarks"></span></p>
+                    </div>
+    
+                    <div class="modal-button-container">
+                        <button onclick="closeScoreModal()">Continue</button>
+                    </div>
+    
+                </div>
+            </div>
+ 
+    
+            <div class="game-quiz-container">
+    
+                <div class="game-details-container">
+                    <h1>Score : <span id="player-score"></span> / 10</h1>
+                    <h1> Question : <span id="question-number"></span> / 10</h1>
+                </div>
+    
+                <div class="game-question-container">
+                    <h1 id="display-question"></h1>
+                </div>
+    
+                <div class="game-options-container">
+    
+                   <div class="modal-container" id="option-modal">
+    
+                        <div class="modal-content-container">
+                             <h1>Please Pick An Option</h1>
+    
+                             <div class="modal-button-container">
+                                <button onclick="closeOptionModal()">Continue</button>
+                            </div>
+    
+                        </div>
+    
+                   </div>
+    
+                    <span>
+                        <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                        <label for="option-one" class="option" id="option-one-label"></label>
+                    </span>
+    
+    
+                    <span>
+                        <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                        <label for="option-two" class="option" id="option-two-label"></label>
+                    </span>
+    
+    
+                    <span>
+                        <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                        <label for="option-three" class="option" id="option-three-label"></label>
+                    </span>
+    
+    
+                    <span>
+                        <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                        <label for="option-four" class="option" id="option-four-label"></label>
+                    </span>
+    
+    
+                </div>
+    
+                <div class="next-button-container">
+                    <button onclick="handleNextQuestion()">Next Question</button>
+                </div>
+    
+            </div>
+        </main>
+        <script src="js/quizz2.js"></script>
+    </body>
+
+
+
+</html>
